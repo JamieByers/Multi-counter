@@ -1,0 +1,13 @@
+<!-- templates/counters.html -->
+<div id="counters-container">
+    <form hx-get="/new-counter" hx-target="#counters">
+        <input type="text" name="title" placeholder="Example Counter">
+        <input type="submit">
+    </form>
+
+    {{ range . }}
+    <div class="counter counter-{{.ID}}" id="counter-{{.ID}}">
+                {{ template "single-counter.html" . }}
+            </div>
+    {{ end }}
+</div>

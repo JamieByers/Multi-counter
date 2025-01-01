@@ -1,0 +1,23 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter App</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <link rel="stylesheet" href="/static/styles/style.css">
+</head>
+<body>
+    <h1>Counter App</h1>
+
+
+    <form hx-get="/new-group" hx-target="#counters">
+        <input type="text" name="title" placeholder="Example Group Name">
+        <input type="submit">
+    </form>
+
+    <div hx-get="/counters" hx-trigger="load" id="counters">
+    </div>
+
+
+</body>
+</html>

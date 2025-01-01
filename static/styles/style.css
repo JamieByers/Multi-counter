@@ -1,0 +1,213 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fafafa;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #000;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+input[type="text"] {
+    padding: 0.75rem 1rem;
+    border: 2px solid #000;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 300px;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #666;
+}
+
+input[type="submit"] {
+    padding: 0.75rem 1.5rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: #333;
+}
+
+/* Counter container styles */
+#counters-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5px;
+    height: 80vh;
+    width: 33vw;
+    overflow-y: auto;
+}
+
+/* Individual counter-wrapper styles */
+.counter-wrapper {
+    background-color: #fff;
+    padding: 1.5rem;
+    border: 2px solid #000;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    box-shadow: 4px 4px 0 #000;
+    transition: transform 0.2s, box-shadow 0.2s;
+    max-width: 550px;
+    height: 100%;
+}
+
+.counter-value {
+    min-width: 25px;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.counter-buttons {
+    width: 125px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.1em;
+}
+
+.delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.counter-left {
+    max-width: 51%;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-wrap: break-word; /* Ensures long words break into multiple lines */
+    word-break: break-word;    /* For even stronger word-breaking */
+    overflow-x: hidden;       /* Prevent horizontal scrolling */
+    overflow-y: visible;      /* Allow vertical growth */
+    height: auto;             /* Ensure the height adjusts automatically */
+    display: flex;            /* Enable flexbox if needed for alignment */
+    flex-direction: column;   /* Stack text vertically */
+}
+
+.counter-right {
+    min-width: 49%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.8rem;
+    background-color: white;
+}
+
+.counter-wrapper:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 #000;
+}
+
+.counter-wrapper div:first-child {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.counter-wrapper div:nth-child(3) {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: monospace;
+    text-align: center;
+}
+
+/* Button styles */
+.counter-wrapper button {
+    padding: 0.5rem 1rem;
+    border: 2px solid #000;
+    background-color: #fff;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 50px;
+}
+
+.counter-wrapper button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Delete button specific styles */
+.counter-wrapper button:last-child {
+    margin-left: auto;
+    background-color: #fff;
+    border-color: #ff0000;
+    color: #ff0000;
+}
+
+.counter-wrapper button:last-child:hover {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+/* Loading state styles */
+.htmx-request {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
+
+    .counter-wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .counter-wrapper div:first-child {
+        width: 100%;
+        min-width: unset;
+        text-align: center;
+    }
+
+    .counter-wrapper button:last-child {
+        margin-left: 0;
+        width: 100%;
+    }
+}

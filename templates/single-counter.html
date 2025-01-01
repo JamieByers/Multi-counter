@@ -1,0 +1,13 @@
+<!-- templates/single-counter.html -->
+<div class="counter-wrapper">
+    <div class="counter-left">{{.Title}}</div>
+
+    <div class="counter-right">
+        <div class="counter-buttons">
+            <button hx-get="/increment/{{.ID}}" hx-target="#counter-{{.ID}}">+</button>
+            <div class="counter-value">{{.Value}}</div>
+            <button hx-get="/decrement/{{.ID}}" hx-target="#counter-{{.ID}}">-</button>
+        </div>
+        <button hx-get="/delete/{{.ID}}" hx-target="#counters" class="delete">Delete</button>
+    </div>
+</div>
